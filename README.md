@@ -1,1 +1,0 @@
-# Caso-de-estudio-El-buen-trigo
