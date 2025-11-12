@@ -1,0 +1,14 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Ejecutar ElBuenTrigo en terminal",
+            "type": "cppvsdbg",
+            "request": "launch",
+            "program": "${workspaceFolder}/ElBuenTrigo.exe",
+            "args": [],
+            "cwd": "${workspaceFolder}",
+            "console": "integratedTerminal"
+        }
+    ]
+}

@@ -1,0 +1,34 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "Compilar El Buen Trigo",
+            "type": "shell",
+            "command": "g++",
+            "args": [
+                "-std=c++17",
+                "-g",
+                "-I.",
+                "-o",
+                "ElBuenTrigo.exe",
+                "main.cpp",
+                "Modelo/*.cpp",
+                "Vista/*.cpp",
+                "Controlador/*.cpp"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "problemMatcher": ["$gcc"],
+            "detail": "Compila todo el proyecto El Buen Trigo"
+        },
+        {
+            "label": "Ejecutar El Buen Trigo",
+            "type": "shell",
+            "command": "./ElBuenTrigo.exe",
+            "dependsOn": ["Compilar El Buen Trigo"],
+            "group": "none"
+        }
+    ]
+}

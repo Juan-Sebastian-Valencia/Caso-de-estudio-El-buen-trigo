@@ -1,0 +1,3 @@
+pan-cacho,50
+pan-royal,50
+pandebono,5
