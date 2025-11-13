@@ -28,7 +28,7 @@ class Panes{
         Recetas receta;
 
     public:
-        Panes();  //Constructor de la clase
+        Panes(const std::string& nombre, int stock, const Recetas& receta);  //Constructor de la clase
 
         //Getters de la clase
         std::string getNombre() const;

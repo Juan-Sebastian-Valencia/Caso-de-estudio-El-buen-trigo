@@ -15,6 +15,7 @@ Colaboradores:
 #include "Modelo/Inventario.h"
 #include "BaseDeDatos.h"
 #include "Modelo/Stock.h"
+#include "Vista/VistaAdministrador.h"
 #include "EncargadoInventario.h"
 #include <fstream>
 #include <iostream>
@@ -24,8 +25,7 @@ class Administrador : public EncargadoInventario {
 public:
     Administrador();
 
-    void generarReporte(const Inventario& inv);
-    void exportarReporteTxt(const Inventario& inv);
+    void exportarReporteTxt(const VistaAdministrador& vadm);
 };
 
 #endif

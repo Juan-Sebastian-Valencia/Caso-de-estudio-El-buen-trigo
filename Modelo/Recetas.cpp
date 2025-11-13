@@ -1,10 +1,9 @@
 #include "Recetas.h"
 
-Recetas::Recetas(){
-    nombre = " ";
-    numeroIngredientes = 0;
-    ingredientesReceta = {};
-}
+Recetas::Recetas(std::string nombre, int numeroIngredientes, std::map<Ingredientes, double> ingredientesReceta) 
+                : nombre(nombre), numeroIngredientes(numeroIngredientes), ingredientesReceta(ingredientesReceta) {}
+
+Recetas::Recetas() : nombre(""), numeroIngredientes(0), ingredientesReceta() {}
 
 //Implementación de getters de la clase
 std::string Recetas::getNombre() const { 
@@ -13,7 +12,7 @@ std::string Recetas::getNombre() const {
 int Recetas::getNumeroIngredientes() const {
     return numeroIngredientes; 
 }
-std::map<Ingredientes, double>& Recetas::getIngredientesReceta()  {
+const std::map<Ingredientes, double>& Recetas::getIngredientesReceta() const {
     return ingredientesReceta;
 }
 

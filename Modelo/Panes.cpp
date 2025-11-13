@@ -1,9 +1,6 @@
 #include "Panes.h"
 
-Panes::Panes(){
-    nombre = " ";
-    stock = 0;
-}
+Panes::Panes(const std::string& nombre, int stock, const Recetas& receta) : nombre(nombre), stock(stock), receta(receta) {}
 
 //Implementación de getters de la clase
 std::string Panes::getNombre() const { return nombre; }
