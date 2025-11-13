@@ -14,8 +14,8 @@ Colaboradores:
 
 #include "Modelo/Stock.h"
 #include "Modelo/Inventario.h"
+#include "Vista/VistaEncargadoInventario.h"
 #include <iostream>
-using namespace std;
 
 class EncargadoInventario {
 public:
@@ -25,7 +25,7 @@ public:
     void editarIngrediente(Inventario& inv);
     void eliminarIngrediente(Inventario& inv);
     void consultarInventario(const Inventario& inv);
-    void verificarNivelMinimo(const Inventario& inv);
+    void verificarNivelMinimo(VistaEncargadoInventario& inv);
 };
 
 #endif

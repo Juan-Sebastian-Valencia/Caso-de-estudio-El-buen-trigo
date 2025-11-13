@@ -1,10 +1,7 @@
 #include <Ingredientes.h>
 
-Ingredientes::Ingredientes(){
-    nombre = " ";
-    unidadMedida = " ";
-    stock = 0;
-}
+Ingredientes::Ingredientes(std::string n, std::string um) : nombre(n), unidadMedida(um) {}
+Ingredientes::Ingredientes(){}
 
 //Implementación de getters de la clase
 std::string Ingredientes::getNombre() const {
@@ -12,12 +9,4 @@ std::string Ingredientes::getNombre() const {
 }
 std::string Ingredientes::getUnidadMedida() const {
     return unidadMedida; 
-}
-double Ingredientes::getStock() const {
-    return stock; 
-}
-
-//Implementación de setters de la clase
-void Ingredientes::setStock(const double stock) {
-    this -> stock = stock; 
 }

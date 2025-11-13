@@ -2,7 +2,6 @@
 #define VISTA_ADMINISTRADOR_H
 
 #include <iostream>
-using namespace std;
 
 class VistaAdministrador {
 public:
@@ -20,4 +19,4 @@ public:
     void mostrarReporteGeneral();
 };
 
-#endif
+#endif // VISTA_ADMINISTRADOR_H

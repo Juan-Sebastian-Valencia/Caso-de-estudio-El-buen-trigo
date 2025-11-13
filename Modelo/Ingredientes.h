@@ -23,15 +23,15 @@ class Ingredientes{
     private:  // Atributos de la clase
         std::string nombre;
         std::string unidadMedida;
-        double stock;
+
 
     public:  //Métodos de la clase
-        Ingredientes();  //Constructor de la clase
+        Ingredientes(std::string n, std::string um);  //Constructor de la clase
+        Ingredientes();
 
         //Getters 
         std::string getNombre() const;
         std::string getUnidadMedida() const;
-        double getStock() const;
 
         //setters
         void setStock(const double stock);

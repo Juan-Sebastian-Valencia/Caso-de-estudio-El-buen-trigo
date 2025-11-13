@@ -2,12 +2,16 @@
 #define VISTA_PANADERO_H
 
 #include <iostream>
-using namespace std;
+#include <string>
+#include <map>
+#include "../Modelo/Ingredientes.h"
 
 class VistaPanadero {
 public:
     void mostrarMenuPanadero();
-    string obtenerNombreReceta();
+    std::string obtenerNombreReceta();
+    int obtenerCantidadIngredientes();
+    std::map<Ingredientes, double> obtenerIngredientesReceta();
     void obtenerDatosRegistroReceta();
     int obtenerCantidadProduccion();
     void mostrarInventarioPanes();
@@ -15,4 +19,4 @@ public:
     void mostrarAdvertenciasProduccion();
 };
 
-#endif
+#endif // VISTA_PANADERO_H 

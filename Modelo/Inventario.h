@@ -22,21 +22,26 @@ Colaboradores:
 
 #include "Ingredientes.h"
 #include "Recetas.h"
-#include <vector>
+#include "Vista/VistaEncargadoInventario.h"
+#include <map>
 
 class Inventario{
 
   private:  //Atributo de la clase
-    std::vector<Ingredientes> ingredientes;
+    std::map<Ingredientes, double> ingredientes;
 
   public:  //Métodos de la clase
     Inventario();  // Constructor de la clase
 
     //Métodos para gestionar los ingredientes de la panaderia
-    void agregarIngrediente(const Ingredientes& nuevoIngrediente);
+    void agregarIngrediente(const Ingredientes& nuevoIngrediente, double cantidad);
     void eliminarIngrediente(const std::string& nombreIngrediente);
     void editarIngrediente(const std::string& nombreIngrediente, double nuevaCantidad);
-    Ingredientes& buscarIngrediente(const std::string& nombreIngrediente);
+    Ingredientes buscarIngrediente(const std::string& nombreIngrediente);
+    void verificarCantIngredientes() const;
+    void restarCantidadIngrediente(const std::string& nombreIngrediente, double cantidad);
+    const std::map<Ingredientes, double>& getIngredientes() const;
+    const double getCantidadIngrediente(const std::string& nombreIngrediente) const;
 };
 
 #endif // INVENTARIO_H

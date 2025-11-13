@@ -15,8 +15,11 @@ Colaboradores:
 #include "../Modelo/Inventario.h"
 #include "../Modelo/Recetas.h"
 #include "../Modelo/Stock.h"
+#include "../Modelo/Panes.h"
+#include "../Vista/VistaPanadero.h"
 #include <vector>
 #include <string>
+#include <iostream>
 
 class Panadero {
 public:
@@ -29,10 +32,10 @@ public:
     void modificarReceta(std::vector<Recetas>& recetas, int indice, const Recetas& recetaModificada);
 
     // Produce pan con base en una receta existente
-    void producirPan(const std::string& nombreReceta);
+    void producirPan(const std::string& nombreReceta, Inventario& inventario, Stock& stockDePanes, const std::vector<Recetas>& recetas);
 
     // Consulta el stock de panes (devuelve el vector para que la Vista lo muestre)
-    std::vector<Panes> consultarStock(const Stock& inventarioPanes) const;
+    std::vector<Panes> consultarStock(const Stock& stockDePanes) const;
 };
 
 #endif // PANADERO_H

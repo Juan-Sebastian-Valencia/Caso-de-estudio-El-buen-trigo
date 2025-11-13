@@ -32,12 +32,13 @@ class Recetas{
         std::map<Ingredientes, double> ingredientesReceta;
 
     public:
-        Recetas();  //Constructor de la clase
+        Recetas(std::string nombre, int numeroIngredientes, std::map<Ingredientes, double> ingredientesReceta);  //Constructor de la clase
+        Recetas();
 
         //Getters de la clase
         std::string getNombre() const;
         int getNumeroIngredientes() const;
-        std::map<Ingredientes, double>& getIngredientesReceta();
+        const std::map<Ingredientes, double>& getIngredientesReceta() const;
 
         //Setters de la clase
         void setNombre(const std::string& nombre);

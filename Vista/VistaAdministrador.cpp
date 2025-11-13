@@ -1,36 +1,38 @@
 #include "VistaAdministrador.h"
 
 void VistaAdministrador::mostrarMenuAdministrador() {
-    cout << "\n--- Menú Administrador ---\n";
-    cout << "1. Generar Reporte de Inventario\n";
-    cout << "2. Exportar Reporte a TXT\n";
-    cout << "3. Ver Resumen General\n";
-    cout << "4. Salir\n";
+    std::cout << "\n--- Menú Administrador ---\n";
+    std::cout << "1. Generar Reporte de Inventario\n";
+    std::cout << "2. Exportar Reporte a TXT\n";
+    std::cout << "3. Ver Resumen General\n";
+    std::cout << "4. Salir\n";
+                int opcion;
+                std::cin >> opcion;
 }
 
 void VistaAdministrador::mostrarReporteInventario() {
-    cout << "\n[VistaAdministrador] Mostrando reporte de inventario...\n";
+    std::cout << "\n[VistaAdministrador] Mostrando reporte de inventario...\n";
 }
 
 void VistaAdministrador::mostrarReporteStock() {
-    cout << "\n[VistaAdministrador] Mostrando reporte de stock de productos...\n";
+    std::cout << "\n[VistaAdministrador] Mostrando reporte de stock de productos...\n";
 }
 
 void VistaAdministrador::advertenciaExportacion() {
-    cout << "\n¡Advertencia! Recuerde guardar los cambios antes de exportar el reporte.\n";
+    std::cout << "\n¡Advertencia! Recuerde guardar los cambios antes de exportar el reporte.\n";
 }
 
 int VistaAdministrador::obtenerOpcionMenu() {
     int opcion;
-    cout << "\nSeleccione una opción: ";
-    cin >> opcion;
+    std::cout << "\nSeleccione una opción: ";
+    std::cin >> opcion;
     return opcion;
 }
 
 void VistaAdministrador::mostrarResumenGeneral() {
-    cout << "\n[VistaAdministrador] Mostrando resumen general del sistema...\n";
+    std::cout << "\n[VistaAdministrador] Mostrando resumen general del sistema...\n";
 }
 
 void VistaAdministrador::mostrarReporteGeneral() {
-    cout << "\n[VistaAdministrador] Mostrando reporte general completo...\n";
+    std::cout << "\n[VistaAdministrador] Mostrando reporte general completo...\n";
 }

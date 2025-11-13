@@ -2,7 +2,6 @@
 #define VISTA_ENCARGADO_INVENTARIO_H
 
 #include <iostream>
-using namespace std;
 
 class VistaEncargadoInventario {
 public:
@@ -10,7 +9,7 @@ public:
     void mostrarInventarioIngredientes();
     void mostrarAlertasReposicion();
     bool advertenciaEliminacionIngrediente();
-    void stockNegativo();
+    void ingredienteNegativo();
 };
 
-#endif
+#endif // VISTA_ENCARGADO_INVENTARIO_H

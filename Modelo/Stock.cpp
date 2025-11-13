@@ -11,7 +11,7 @@ std::vector<Panes> Stock::getVectorPanes() const {return panes; }
 //Implementación de métodos para gestionar los panes de la panaderia
 void Stock::agregarPan(const Panes& nuevoPan, Inventario& inventario) {
     panes.push_back(nuevoPan);
-    inventario.restarIngredientesReceta(nuevoPan.getReceta());
+    inventario.eliminarIngrediente(nuevoPan.getReceta().getNombre());
 }
 
 void Stock::eliminarPanes(std::string& nombrePan, int cantidadEliminar)
