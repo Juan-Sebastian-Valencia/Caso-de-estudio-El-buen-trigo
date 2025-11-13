@@ -14,6 +14,7 @@ Colaboradores:
 
 #include "Modelo/Inventario.h"
 #include "BaseDeDatos.h"
+#include "Modelo/Stock.h"
 #include <fstream>
 #include <iostream>
 using namespace std;
