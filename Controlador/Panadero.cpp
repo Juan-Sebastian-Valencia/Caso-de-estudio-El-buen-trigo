@@ -5,14 +5,14 @@ Panadero::Panadero() {}
 // ===========================================================
 // Registra una receta (solo agrega al vector recibido)
 // ===========================================================
-void Panadero::registrarReceta(std::vector<Receta>& recetas, const Receta& nuevaReceta) {
+void Panadero::registrarReceta(std::vector<Recetas>& recetas, const Recetas& nuevaReceta) {
     recetas.push_back(nuevaReceta);
 }
 
 // ===========================================================
 // Modifica una receta existente (reemplaza el objeto)
 // ===========================================================
-void Panadero::modificarReceta(std::vector<Receta>& recetas, int indice, const Receta& recetaModificada) {
+void Panadero::modificarReceta(std::vector<Recetas>& recetas, int indice, const Recetas& recetaModificada) {
     if (indice >= 0 && indice < static_cast<int>(recetas.size())) {
         recetas[indice] = recetaModificada;
     }

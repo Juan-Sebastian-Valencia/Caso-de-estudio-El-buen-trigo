@@ -41,8 +41,4 @@ class InventarioPanes{
 };
 
 
-<<<<<<< HEAD
 #endif // INVENTARIOPANES_H
-=======
-#endif INVENTARIOPANES_H
->>>>>>> 30f205684ecc2689dc0c56a3dd44bd4c690b4088

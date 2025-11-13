@@ -1,16 +1,16 @@
 #ifndef PRODUCCION_H
 #define PRODUCCION_H
 
-#include "Receta.h"
+#include "Recetas.h"
 #include "InventarioPanes.h"
 
 class Produccion {
 private:
-    Receta receta;
+    Recetas receta;
     int cantidadProducir;
 
 public:
-    Produccion(Receta r, int cant);
+    Produccion(Recetas r, int cant);
     void registrarProduccion(InventarioPanes& inv);
 };
 

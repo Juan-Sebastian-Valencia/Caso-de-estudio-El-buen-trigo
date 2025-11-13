@@ -50,4 +50,4 @@ class Recetas{
         void agregarCantidadIngrediente(const double cantidadIngrediente);
 };
 
-#endif RECETAS_H
+#endif // RECETAS_H

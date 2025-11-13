@@ -2,7 +2,7 @@
 #include <iostream>
 using namespace std;
 
-Produccion::Produccion(Receta r, int cant)
+Produccion::Produccion(Recetas r, int cant)
     : receta(r), cantidadProducir(cant) {}
 
 void Produccion::registrarProduccion(InventarioPanes& inv) {
