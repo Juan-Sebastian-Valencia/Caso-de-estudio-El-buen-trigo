@@ -25,6 +25,7 @@ class Administrador : public EncargadoInventario {
 public:
     Administrador();
 
+    void generarReporte(const Inventario& inv, const Stock& stockDePanes, const VistaAdministrador& vadm);
     void exportarReporteTxt(const VistaAdministrador& vadm);
 };
 

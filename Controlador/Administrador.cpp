@@ -2,7 +2,15 @@
 
 Administrador::Administrador() {}
 
-void Administrador::exportarReporteTxt(const VistaAdministrador& vinv) {
+void Administrador::generarReporte(const Inventario& inv, const Stock& stockDePanes, const VistaAdministrador& vadm) {
+    VistaAdministrador vista;
+    std::cout << "\n --- Reporte de Inventario ---\n";
+    vista.mostrarReporteInventario(std::map<Ingredientes, double>());
+    std::cout << "\n --- Reporte de Stock ---\n";
+    vista.mostrarReporteStock(std::vector<Panes>());
+}
+
+void Administrador::exportarReporteTxt(const VistaAdministrador& vadm) {
     ofstream file("reporte_inventario.txt");
     if (!file.is_open()) {
         cout << "Error al crear el archivo.\n";
@@ -14,10 +22,10 @@ void Administrador::exportarReporteTxt(const VistaAdministrador& vinv) {
     file << "===== REPORTE DE INVENTARIO Y STOCK =====\n\n";
     
     file << "[Ingredientes]\n";
-    vista.mostrarReporteInventario();
+    vista.mostrarReporteInventario(std::map<Ingredientes, double>());
 
     file << "\n[Stock]\n";
-    vista.mostrarReporteStock();
+    vista.mostrarReporteStock(std::vector<Panes>());
 
     file.close();
     cout << "Reporte exportado exitosamente como 'reporte_inventario.txt'.\n";

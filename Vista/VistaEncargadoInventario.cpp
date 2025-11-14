@@ -6,8 +6,6 @@ void VistaEncargadoInventario::mostrarMenuEncargadoInventario() {
     std::cout << "2. Consultar Inventario\n";
     std::cout << "3. Ver Alertas de Reposición\n";
     std::cout << "4. Salir\n";
-                int opcion;
-                std::cin >> opcion;
 }
 
 void VistaEncargadoInventario::mostrarInventarioIngredientes() {
@@ -27,4 +25,11 @@ bool VistaEncargadoInventario::advertenciaEliminacionIngrediente() {
 
 void VistaEncargadoInventario::ingredienteNegativo() {
     std::cout << "\n¡Advertencia! No se permite registrar stock negativo.\n";
+}
+
+int VistaEncargadoInventario::obtenerOpcionMenu() {
+    int opcion;
+    std::cout << "\nSeleccione una opción: ";
+    std::cin >> opcion;
+    return opcion;
 }

@@ -4,14 +4,15 @@ ControladorGeneral::ControladorGeneral() {}
 
 void ControladorGeneral::ejecutarMenuPanadero(int opcion) {
     do{
-
-        int indice = 0; // Índice para modificar receta, en un caso real esto vendría de la Vista
+        VistaPanadero vpan;
+        vpan.mostrarMenuPanadero();
+        int opcion = vpan.obtenerOpcionMenu();
         switch (opcion) {
             case 1:
                 panadero.registrarReceta(recetas, Recetas());
                 break;
             case 2:
-                panadero.modificarReceta(recetas, indice, Recetas());
+                panadero.modificarReceta(recetas, Recetas());
                 break;
             case 3:
                 panadero.consultarStock(Stock());
@@ -29,6 +30,7 @@ void ControladorGeneral::ejecutarMenuEncargado(int opcion) {
     do{
         VistaEncargadoInventario vinv;
         vinv.mostrarMenuEncargadoInventario();
+        int opcion = vinv.obtenerOpcionMenu();
         switch (opcion) {
             case 1: {
                 Inventario ingrediente;
@@ -58,6 +60,7 @@ void ControladorGeneral::ejecutarMenuAdministrador(int opcion) {
     do{
         VistaAdministrador vadm;
         vadm.mostrarMenuAdministrador();
+        int opcion = vadm.obtenerOpcionMenu();
         switch (opcion) {
             case 1:{
                 VistaAdministrador vadm;

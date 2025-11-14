@@ -10,6 +10,13 @@ void VistaPanadero::mostrarMenuPanadero() {
                 std::cin >> opcion;
 }
 
+int VistaPanadero::obtenerOpcionMenu() {
+    int opcion;
+    std::cout << "\nSeleccione una opción: ";
+    std::cin >> opcion;
+    return opcion;
+}
+
 std::string VistaPanadero::obtenerNombreReceta() {
     std::string nombre;
     std::cout << "Ingrese el nombre de la receta: ";

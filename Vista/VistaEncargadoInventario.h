@@ -10,6 +10,7 @@ public:
     void mostrarAlertasReposicion();
     bool advertenciaEliminacionIngrediente();
     void ingredienteNegativo();
+    int obtenerOpcionMenu();
 };
 
 #endif // VISTA_ENCARGADO_INVENTARIO_H

@@ -12,7 +12,7 @@ void Panadero::registrarReceta(std::vector<Recetas>& recetas, const Recetas& nue
 }
 
 // Modifica una receta existente (reemplaza el objeto)
-void Panadero::modificarReceta(std::vector<Recetas>& recetas, int indice, const Recetas& recetaModificada) {
+void Panadero::modificarReceta(std::vector<Recetas>& recetas, const Recetas& recetaModificada) {
     VistaPanadero vista;
     std::cout << "\n[Panadero] Modificando receta...\n";
     Recetas recetaModificada(vista.obtenerNombreReceta(), vista.obtenerCantidadProduccion(), vista.obtenerIngredientesReceta());

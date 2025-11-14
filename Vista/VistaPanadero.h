@@ -9,6 +9,7 @@
 class VistaPanadero {
 public:
     void mostrarMenuPanadero();
+    int obtenerOpcionMenu();
     std::string obtenerNombreReceta();
     int obtenerCantidadIngredientes();
     std::map<Ingredientes, double> obtenerIngredientesReceta();
