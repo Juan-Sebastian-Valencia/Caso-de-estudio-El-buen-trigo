@@ -1,30 +1,47 @@
 #include "BaseDeDatos.h"
-#include <filesystem>
 
 BaseDeDatos::BaseDeDatos() {}
+
+void BaseDeDatos::crearSiNoExiste(const std::string& nombreArchivo) {
+    std::string ruta = rutaBD + "/" + nombreArchivo;
+
+    if (!std::filesystem::exists(ruta)) {
+        std::ofstream archivo(ruta);
+        archivo.close();
+    }
+}
+
+void BaseDeDatos::cargarArchivo(const std::string& nombreArchivo) {
+    std::string ruta = rutaBD + "/" + nombreArchivo;
+    std::ifstream archivo(ruta);
+
+    datos[nombreArchivo].clear();
+
+    if (!archivo.is_open()) {
+        return;
+    }
+
+    std::string linea;
+    while (std::getline(archivo, linea)) {
+        datos[nombreArchivo].push_back(linea);
+    }
+
+    archivo.close();
+}
 
 void BaseDeDatos::conectar(const std::string& ruta) {
     rutaBD = ruta;
     datos.clear();
 
-    namespace fs = std::filesystem;
-    fs::path p(ruta);
+    for (auto& entry : std::filesystem::directory_iterator(rutaBD)) {
+        if (entry.is_regular_file()) {
+            std::string nombre = entry.path().filename().string();
 
-    if (!fs::exists(p)) {
-        std::cerr << "Ruta no existe: " << ruta << std::endl;
-        return;
-    }
-
-    if (fs::is_directory(p)) {
-        for (const auto& ent : fs::directory_iterator(p)) {
-            if (ent.is_regular_file() && ent.path().extension() == ".txt") {
-                cargarDatos(ent.path(), ent.path().filename().string());
+            if (entry.path().extension() == ".txt") {
+                crearSiNoExiste(nombre);
+                cargarArchivo(nombre);
             }
         }
-    } else if (fs::is_regular_file(p) && p.extension() == ".txt") {
-        cargarDatos(p, p.filename().string());
-    } else {
-        std::cerr << "Ruta no es un .txt ni un directorio: " << ruta << std::endl;
     }
 }
 
@@ -32,24 +49,40 @@ void BaseDeDatos::desconectar() {
     datos.clear();
 }
 
-void BaseDeDatos::cargarDatos(const std::filesystem::path& ruta, const std::string& nombreArchivo) {
-    std::ifstream archivo(ruta);
-    std::string linea;
+std::vector<std::string> BaseDeDatos::obtenerLineas(const std::string& nombreArchivo) const {
+    if (datos.count(nombreArchivo)) {
+        return datos.at(nombreArchivo);
+    }
+    return {};
+}
+
+void BaseDeDatos::agregarLinea(const std::string& nombreArchivo, const std::string& linea) {
+    std::string ruta = rutaBD + "/" + nombreArchivo;
+
+    std::ofstream archivo(ruta, std::ios::app);
+
+    if (archivo.is_open()) {
+        archivo << linea << "\n";
+        archivo.close();
+    }
+
+    datos[nombreArchivo].push_back(linea);
+}
+
+void BaseDeDatos::sobrescribirArchivo(const std::string& nombreArchivo, const std::vector<std::string>& lineas) {
+    std::string ruta = rutaBD + "/" + nombreArchivo;
+
+    std::ofstream archivo(ruta, std::ios::trunc);
+
     if (!archivo.is_open()) {
-        std::cerr << "No se pudo abrir: " << ruta << std::endl;
         return;
     }
-    while (std::getline(archivo, linea)) {
-        datos[nombreArchivo].push_back(linea);
+
+    for (const auto& linea : lineas) {
+        archivo << linea << "\n";
     }
-}
 
-const std::map<std::string, std::vector<std::string>>& BaseDeDatos::obtenerDatos() const {
-    return datos;
-}
+    archivo.close();
 
-std::vector<std::string> BaseDeDatos::obtenerLineas(const std::string& nombreArchivo) const {
-    auto it = datos.find(nombreArchivo);
-    if (it != datos.end()) return it->second;
-    return {};
+    datos[nombreArchivo] = lineas;
 }

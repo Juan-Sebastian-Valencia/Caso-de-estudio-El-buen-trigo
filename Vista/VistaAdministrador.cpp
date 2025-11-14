@@ -22,6 +22,13 @@ void VistaAdministrador::mostrarReporteStock(const std::vector<Panes>& stock) {
     }
 }
 
+void VistaAdministrador::escribirReporteStock(const std::vector<Panes>& stock) {
+    std::cout << "\n[VistaAdministrador] Mostrando reporte de stock de productos...\n";
+    for (const auto& item : stock) {
+        std::cout << "Nombre del pan: " << item.getNombre() << " Cantidad: " << item.getStock() << "\n";
+    }
+}
+
 void VistaAdministrador::advertenciaExportacion() {
     std::cout << "\n¡Advertencia! Recuerde guardar los cambios antes de exportar el reporte.\n";
 }
@@ -31,11 +38,6 @@ int VistaAdministrador::obtenerOpcionMenu() {
     std::cout << "\nSeleccione una opción: ";
     std::cin >> opcion;
     return opcion;
-}
-
-void VistaAdministrador::mostrarResumenGeneral() {
-    std::cout << "\n[VistaAdministrador] Mostrando resumen general del sistema...\n";
-    
 }
 
 void VistaAdministrador::mostrarReporteGeneral() {

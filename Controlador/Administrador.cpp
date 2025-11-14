@@ -10,7 +10,7 @@ void Administrador::generarReporte(const Inventario& inv, const Stock& stockDePa
     vista.mostrarReporteStock(std::vector<Panes>());
 }
 
-void Administrador::exportarReporteTxt(const VistaAdministrador& vadm) {
+/*void Administrador::exportarReporteTxt(const VistaAdministrador& vadm) {
     ofstream file("reporte_inventario.txt");
     if (!file.is_open()) {
         cout << "Error al crear el archivo.\n";
@@ -26,6 +26,31 @@ void Administrador::exportarReporteTxt(const VistaAdministrador& vadm) {
 
     file << "\n[Stock]\n";
     vista.mostrarReporteStock(std::vector<Panes>());
+
+    file.close();
+    cout << "Reporte exportado exitosamente como 'reporte_inventario.txt'.\n";
+}*/
+void Administrador::exportarReporteTxt(const Inventario& inv, const Stock& stockDePanes) {
+    ofstream file("reporte_inventario.txt");
+    if (!file.is_open()) {
+        cout << "Error al crear el archivo.\n";
+        return;
+    }
+
+    file << "===== REPORTE DE INVENTARIO Y STOCK =====\n\n";
+
+    file << "[Ingredientes]\n";
+    for (const auto& i : inv.getIngredientes()) {
+        file << "- " << i.first.getNombre() << "---" << i.first.getUnidadMedida() << "---" << i.second << "\n";
+        if (inv.getCantidadIngrediente(i.first.getNombre()) < 5.0) {
+            file << "  ¡Alerta! Nivel bajo";
+        }
+        file << "\n";
+    }
+
+    file << "\n[Productos]\n";
+    for (const auto& p : stockDePanes.getVectorPanes())
+        file << "- " << p.getNombre() << ": " << p.getStock() << " unidades\n";
 
     file.close();
     cout << "Reporte exportado exitosamente como 'reporte_inventario.txt'.\n";
