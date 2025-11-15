@@ -30,9 +30,6 @@ public:
     // Limpia el map interno
     void desconectar();
 
-    // Obtiene las líneas crudas de un archivo
-    std::vector<std::string> obtenerLineas(const std::string& nombreArchivo) const;
-
     // Agrega una línea cruda al final del archivo
     void agregarLinea(const std::string& nombreArchivo, const std::string& linea);
 

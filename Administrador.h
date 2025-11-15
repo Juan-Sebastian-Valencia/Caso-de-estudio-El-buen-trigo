@@ -12,10 +12,10 @@ Colaboradores:
 #ifndef ADMINISTRADOR_H
 #define ADMINISTRADOR_H
 
-#include "Modelo/Inventario.h"
+#include "Inventario.h"
 #include "BaseDeDatos.h"
-#include "Modelo/Stock.h"
-#include "Vista/VistaAdministrador.h"
+#include "Stock.h"
+#include "VistaAdministrador.h"
 #include "EncargadoInventario.h"
 #include <fstream>
 #include <iostream>

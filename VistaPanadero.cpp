@@ -6,8 +6,6 @@ void VistaPanadero::mostrarMenuPanadero() {
     std::cout << "2. Registrar Producción\n";
     std::cout << "3. Consultar Stock\n";
     std::cout << "4. Salir\n";
-                int opcion;
-                std::cin >> opcion;
 }
 
 int VistaPanadero::obtenerOpcionMenu() {

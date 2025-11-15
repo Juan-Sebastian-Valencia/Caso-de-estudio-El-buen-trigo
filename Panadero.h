@@ -12,11 +12,11 @@ Colaboradores:
 #ifndef PANADERO_H
 #define PANADERO_H
 
-#include "../Modelo/Inventario.h"
-#include "../Modelo/Recetas.h"
-#include "../Modelo/Stock.h"
-#include "../Modelo/Panes.h"
-#include "../Vista/VistaPanadero.h"
+#include "Inventario.h"
+#include "Recetas.h"
+#include "Stock.h"
+#include "Panes.h"
+#include "VistaPanadero.h"
 #include "BaseDeDatos.h"
 #include <vector>
 #include <string>

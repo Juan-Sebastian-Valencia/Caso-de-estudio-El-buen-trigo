@@ -12,9 +12,9 @@ Colaboradores:
 #ifndef ENCARGADOINVENTARIO_H
 #define ENCARGADOINVENTARIO_H
 
-#include "Modelo/Stock.h"
-#include "Modelo/Inventario.h"
-#include "Vista/VistaEncargadoInventario.h"
+#include "Stock.h"
+#include "Inventario.h"
+#include "VistaEncargadoInventario.h"
 #include "BaseDeDatos.h"
 #include <iostream>
 

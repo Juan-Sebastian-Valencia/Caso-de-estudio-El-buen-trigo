@@ -2,6 +2,10 @@
 
 ControladorGeneral::ControladorGeneral() {}
 
+void ControladorGeneral::inicializarBaseDeDatos(const std::string& ruta) {
+    baseDatos.conectar(ruta);
+}
+
 void ControladorGeneral::ejecutarMenuPanadero(int opcion) {
     do{
         vp.mostrarMenuPanadero();

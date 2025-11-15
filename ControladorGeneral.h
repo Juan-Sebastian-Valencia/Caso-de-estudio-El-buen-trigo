@@ -16,9 +16,9 @@ Colaboradores:
 #include "EncargadoInventario.h"
 #include "Administrador.h"
 #include "BaseDeDatos.h"
-#include "../Modelo/Inventario.h"
-#include "../Modelo/Stock.h"
-#include "../Modelo/Recetas.h"
+#include "Inventario.h"
+#include "Stock.h"
+#include "Recetas.h"
 #include <vector>
 
 class ControladorGeneral {
@@ -37,6 +37,8 @@ private:
     VistaPanadero vp;
 public:
     ControladorGeneral();
+
+    void inicializarBaseDeDatos(const std::string& ruta);
 
     // Sólo estas tres funciones públicas: la Vista llamará a una de ellas
     void ejecutarMenuPanadero(int opcion);

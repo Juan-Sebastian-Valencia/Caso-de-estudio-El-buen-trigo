@@ -4,7 +4,7 @@
 #include <iostream>
 #include <string>
 #include <map>
-#include "../Modelo/Ingredientes.h"
+#include "Ingredientes.h"
 
 class VistaPanadero {
 public:

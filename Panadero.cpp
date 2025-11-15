@@ -26,10 +26,7 @@ void Panadero::registrarReceta(std::vector<Recetas>& recetas, const Recetas& nue
 void Panadero::modificarReceta(std::vector<Recetas>& recetas, const Recetas& recetaModificada) {
     VistaPanadero vista;
     std::cout << "\n[Panadero] Modificando receta...\n";
-    Recetas recetaModificada(vista.obtenerNombreReceta(), vista.obtenerCantidadProduccion(), vista.obtenerIngredientesReceta());
-
-    
-
+    Recetas recetaModifica(vista.obtenerNombreReceta(), vista.obtenerCantidadProduccion(), vista.obtenerIngredientesReceta());
 
     std::vector<std::string> nuevasLineas;
     for (const auto& r : recetas) {
@@ -40,8 +37,8 @@ void Panadero::modificarReceta(std::vector<Recetas>& recetas, const Recetas& rec
         nuevasLineas.push_back(linea);
     }
     for (auto& receta : recetas) {
-        if (receta.getNombre() == recetaModificada.getNombre()) {
-            receta = recetaModificada;
+        if (receta.getNombre() == recetaModifica.getNombre()) {
+            receta = recetaModifica;
             break;
         }
     }

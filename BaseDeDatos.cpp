@@ -49,13 +49,6 @@ void BaseDeDatos::desconectar() {
     datos.clear();
 }
 
-std::vector<std::string> BaseDeDatos::obtenerLineas(const std::string& nombreArchivo) const {
-    if (datos.count(nombreArchivo)) {
-        return datos.at(nombreArchivo);
-    }
-    return {};
-}
-
 void BaseDeDatos::agregarLinea(const std::string& nombreArchivo, const std::string& linea) {
     std::string ruta = rutaBD + "/" + nombreArchivo;
 

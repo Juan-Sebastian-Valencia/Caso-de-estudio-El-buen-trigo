@@ -5,8 +5,8 @@
 #include <map>
 #include <vector>
 #include <fstream>
-#include "../Modelo/Panes.h"
-#include "../Modelo/Ingredientes.h"
+#include "Panes.h"
+#include "Ingredientes.h"
 
 class VistaAdministrador {
 public:

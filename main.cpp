@@ -1,18 +1,21 @@
 #include <iostream>
-#include "Controlador/ControladorGeneral.h"
-#include "Controlador/Panadero.h"
-#include "Controlador/EncargadoInventario.h"
-#include "Controlador/Administrador.h"
-#include "Vista/Vista.h"
+#include "ControladorGeneral.h"
+#include "Panadero.h"
+#include "EncargadoInventario.h"
+#include "Administrador.h"
+#include "Vista.h"
 using namespace std;
 
 int main() {
     ControladorGeneral app;
     Vista vista;
+
+    app.inicializarBaseDeDatos("Datos/");
+
     bool salir = false;
 
     while (!salir) {
-        vista.mostrarMenu(); break;
+        vista.mostrarMenu();
         int opcion = vista.obtenerOpcionMenu();
         
         switch (opcion) {

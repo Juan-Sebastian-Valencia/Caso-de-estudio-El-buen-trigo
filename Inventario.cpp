@@ -43,7 +43,7 @@ void Inventario::eliminarIngrediente(const std::string& nombreIngrediente){
 }
 
 void Inventario::editarIngrediente(const std::string& nombreIngrediente, double nuevoStock) { 
-    buscarIngrediente(nombreIngrediente).setStock(nuevoStock);
+    buscarIngrediente(nombreIngrediente);
 }
 
 Ingredientes Inventario::buscarIngrediente(const std::string& nombreIngrediente){
