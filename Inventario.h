@@ -39,7 +39,7 @@ class Inventario{
     void eliminarIngrediente(const std::string& nombreIngrediente);
     void editarIngrediente(const std::string& nombreIngrediente, double nuevaCantidad);
     Ingredientes buscarIngrediente(const std::string& nombreIngrediente);
-    void verificarCantIngredientes() const;
+    bool verificarCantIngredientes(const std::map<Ingredientes, double>& req, int produccion) const;
     void restarCantidadIngrediente(const std::string& nombreIngrediente, double cantidad);
     const std::map<Ingredientes, double>& getIngredientes() const;
     const double getCantidadIngrediente(const std::string& nombreIngrediente) const;

@@ -20,7 +20,7 @@ void ControladorGeneral::ejecutarMenuPanadero(int opcion) {
         opcionMenu = vp.obtenerOpcionMenu();
         switch (opcionMenu) {
             case 1:
-                panadero.registrarReceta(recetas, receta);
+                panadero.registrarReceta(recetas);
                 break;
             case 2:
                 panadero.modificarReceta(recetas, receta);

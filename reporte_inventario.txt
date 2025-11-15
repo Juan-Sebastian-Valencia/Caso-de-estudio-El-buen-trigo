@@ -1,6 +1,24 @@
 ===== REPORTE DE INVENTARIO Y STOCK =====
 
 [Ingredientes]
+- aceite---mililitros---10000
+
+- agua---mililitros---20000
+
+- esencia-chocolate---mililitros---50000
+
+- esencia-vainilla---mililitros---50000
+
+- harina---gramos---10000
+
+- huevos---unidad---1000
+
+- levadura---gramos---40000
+
+- mantequilla---cuartos---40000
+
+- queso---gramos---50000
+
 
 [Productos]
 - pan-cacho: 50 unidades
