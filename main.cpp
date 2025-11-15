@@ -1,3 +1,5 @@
+// Link del repositorio en GitHub: https://github.com/Juan-Sebastian-Valencia/Caso-de-estudio-El-buen-trigo
+
 #include <iostream>
 #include "ControladorGeneral.h"
 #include "Panadero.h"

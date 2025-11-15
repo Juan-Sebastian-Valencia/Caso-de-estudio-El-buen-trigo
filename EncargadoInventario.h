@@ -1,14 +1,3 @@
-/*
-===============================================================================
-                                TARJETA CRC
-===============================================================================
-Nombre de la clase:       EncargadoInventario
-Responsabilidades:        
-    ...
-Colaboradores:            
-    ...
-===============================================================================
-*/
 #ifndef ENCARGADOINVENTARIO_H
 #define ENCARGADOINVENTARIO_H
 
@@ -33,4 +22,4 @@ public:
     void consultarStock(VistaAdministrador& inv, const Stock& stock) const;
 };
 
-#endif
+#endif // ENCARGADOINVENTARIO_H
