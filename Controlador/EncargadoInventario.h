@@ -25,10 +25,15 @@ public:
                                 TARJETA CRC
 ===============================================================================
 Nombre de la clase:       EncargadoInventario
-Responsabilidades:        
-    ...
+Responsabilidades:  
+    Agrega ingredientes al inventario
+    Edita los ingredientes de inventario
+    Elimina ingredientes
+    verifica los niveles de los ingredientes
 Colaboradores:            
-    ...
+    Inventario
+    VistaInventario
+    ControladorGeneral
 ===============================================================================
 */
->>>>>>> 30f205684ecc2689dc0c56a3dd44bd4c690b4088
+
