@@ -74,14 +74,31 @@ Ingredientes Inventario::buscarIngrediente(const std::string& nombreIngrediente)
     return Ingredientes(); // o lanzar una excepción si el ingrediente no se encuentra
 }
 
-void Inventario::verificarCantIngredientes() const {
-    for (const auto& it : ingredientes) {
-        if (it.second < 50.0) { // Suponiendo que 50.0 es el nivel mínimo
-            VistaEncargadoInventario vista;
-            vista.mostrarAlertasReposicion();
-            break;
+bool Inventario::verificarCantIngredientes(const std::map<Ingredientes, double>& req, int produccion) const {
+    for (const auto& ingReq : req) {
+        const std::string& nombre = ingReq.first.getNombre();
+        double cantidadNecesaria = ingReq.second * produccion;
+
+        bool encontrado = false;
+
+        for (const auto& ingInv : ingredientes) {
+            if (ingInv.first.getNombre() == nombre) {
+                encontrado = true;
+
+                if (ingInv.second < cantidadNecesaria) {
+                    std::cout << "[Inventario] No hay suficiente " << nombre << ".\n";
+                    return false;
+                }
+            }
+        }
+
+        if (!encontrado) {
+            std::cout << "[Inventario] Ingrediente no encontrado: " << nombre << "\n";
+            return false;
         }
     }
+
+    return true;
 }
 
 void Inventario::restarCantidadIngrediente(const std::string& nombreIngrediente, double cantidad) {

@@ -24,14 +24,13 @@ std::string VistaPanadero::obtenerNombreReceta() {
 
 int VistaPanadero::obtenerCantidadIngredientes() {
     int ingredientes;
-    std::cout << "Ingrese la cantidad de ingredientes: ";
+    std::cout << "Ingrese la cantidad de ingredientes a usar: ";
     std::cin >> ingredientes;
     return ingredientes;
 }
 
-std::map<Ingredientes, double> VistaPanadero::obtenerIngredientesReceta() {
+std::map<Ingredientes, double> VistaPanadero::obtenerIngredientesReceta(int cantidadIngredientes) {
     std::map<Ingredientes, double> ingredientesReceta;
-    int cantidadIngredientes = obtenerCantidadIngredientes();
 
     for (int i = 0; i < cantidadIngredientes; ++i) {
         std::string nombreIngrediente;
@@ -63,6 +62,7 @@ void VistaPanadero::mostrarInventarioRecetas() {
     std::cout << "\n[VistaPanadero] Mostrando recetas registradas...\n";
     recetas.getRecetas();
 }
+
 void VistaPanadero::mostrarAdvertenciasProduccion() {
     std::cout << "\n[VistaPanadero] Advertencia! ingredientes insuficientes para la producción.\n";
 }

@@ -29,7 +29,7 @@ public:
     Panadero();
 
     // Registra una nueva receta
-    void registrarReceta(std::vector<Recetas>& recetas, const Recetas& nuevaReceta);
+    void registrarReceta(std::vector<Recetas>& recetas);
 
     // Modifica una receta existente (según el índice)
     void modificarReceta(std::vector<Recetas>& recetas, const Recetas& recetaModificada);

@@ -15,7 +15,7 @@ public:
     int obtenerOpcionMenu();
     std::string obtenerNombreReceta();
     int obtenerCantidadIngredientes();
-    std::map<Ingredientes, double> obtenerIngredientesReceta();
+    std::map<Ingredientes, double> obtenerIngredientesReceta(int cantidadIngredientes);
     void obtenerDatosRegistroReceta();
     int obtenerCantidadProduccion();
     void mostrarInventarioRecetas();

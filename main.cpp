@@ -13,7 +13,7 @@ int main() {
     Vista vista;
 
     app.inicializarBaseDeDatos("Datos/");
-
+    app.inicializarDependencias();
     bool salir = false;
 
     while (!salir) {
